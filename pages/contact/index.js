@@ -45,9 +45,9 @@ const Contact = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          src="../../bulb.png"
+          src="/bulb.png"  // Corrected image path
           alt="Motivational Visual"
-          className=" w-300 h-auto object-contain"
+          className="w-80 h-auto object-contain"
         />
       </motion.div>
 
@@ -60,7 +60,7 @@ const Contact = () => {
         className="w-full xl:w-1/2 px-15 py-10 bg-black shadow-xl rounded-lg p-20 border-l-4 border-red-800 shadow-red-400/50 mt-10 xl:mt-0"
       >
         <h2 className="text-2xl font-bold text-gray-500 mb-6">Contact Me</h2>
-        <form ref={form} onSubmit={sendEmail} className="space-y-16s">
+        <form ref={form} onSubmit={sendEmail} className="space-y-4"> {/* Fixed typo here */}
           {/* Name Field */}
           <div key="name-field">
             <label htmlFor="name" className="block text-sm font-semibold text-gray-600">
@@ -84,7 +84,7 @@ const Contact = () => {
               id="email"
               name="user_email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 mt-2  text-black border rounded-md shadow-lg shadow-red-500/50 focus:outline-none onfocus:shadow-green-800/80 focus:ring-2"
+              className="w-full px-4 py-2 mt-2  text-black border rounded-md shadow-lg shadow-red-500/50 focus:outline-none focus:ring-2 focus:ring-red-300" // Fixed focus ring class
             />
           </div>
           {/* Message Field */}
@@ -116,3 +116,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

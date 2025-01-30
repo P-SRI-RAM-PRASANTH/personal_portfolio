@@ -1,4 +1,3 @@
-// icons
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import {
@@ -9,7 +8,6 @@ import {
   FaWordpress,
   FaFigma,
 } from "react-icons/fa";
-
 import {
   SiNextdotjs,
   SiFramer,
@@ -116,50 +114,48 @@ const About = () => {
           contribute to the growth and success of the company.
         </motion.p>
       </div>
- {/* Right Image */}
- <motion.div
-  variants={fadeIn('up', 0.4)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="flex-1 flex justify-center items-center xl:pt-40 relative"
->
-  {/* Container for image */}
-  <div
-    className="relative w-80 h-180 xl:w-[350px] xl:h-[600px] overflow-hidden shadow-lg border-1 border-red-500 animate-blink shadow-red-500"
-    style={{
-      borderTopLeftRadius: '10rem',
-      borderBottomRightRadius: '4rem',
-    }}
-  >
-    {/* Static image */}
-    <Image
-      src="../../my1.png"
-      alt="About Me"
-      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-    />
-  </div>
 
-  <style jsx>{`
-    @keyframes blink {
-      0%, 100% {
-        box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px 5px rgba(255, 0, 0, 1);
-      }
-    }
-    .animate-blink {
-      animation: blink 1.5s infinite;
-    }
-  `}</style>
-</motion.div>
+      {/* Right Image */}
+      <motion.div
+        variants={fadeIn('up', 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="flex-1 flex justify-center items-center xl:pt-40 relative"
+      >
+        {/* Container for image */}
+        <div
+          className="relative w-80 h-80 xl:w-[350px] xl:h-[600px] overflow-hidden shadow-lg border-1 border-red-500 animate-blink shadow-red-500"
+          style={{
+            borderTopLeftRadius: '10rem',
+            borderBottomRightRadius: '4rem',
+          }}
+        >
+          {/* Static image using next/image */}
+          <motion.img
+            src="/my1.png"  // Make sure the image is in the public folder
+            alt="About Me"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
 
-
-
-
+        <style jsx>{`
+          @keyframes blink {
+            0%, 100% {
+              box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.5);
+            }
+            50% {
+              box-shadow: 0 0 20px 5px rgba(255, 0, 0, 1);
+            }
+          }
+          .animate-blink {
+            animation: blink 1.5s infinite;
+          }
+        `}</style>
+      </motion.div>
     </div>
   );
 };
 
 export default About;
+
