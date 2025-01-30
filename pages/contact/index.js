@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import Image from "next/image";
 
 const Contact = () => {
   const form = useRef();
@@ -37,18 +38,23 @@ const Contact = () => {
       >
         {/* Heading */}
         <h2 className="text-3xl font-bold text-red-700 mb-6 text-center py-10 xl:text-left">
-          LETS WORK AND GROW TOGETHER
+          LET&apos;S WORK AND GROW TOGETHER
         </h2>
         {/* Image */}
-        <motion.img
+        <motion.div
           key="image"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          src="/bulb.png"  // Corrected image path
-          alt="Motivational Visual"
-          className="w-80 h-auto object-contain"
-        />
+        >
+          <Image
+            src="/bulb.png"  // Correct image path
+            alt="Motivational Visual"
+            width={320}       // Add width and height
+            height={320}
+            className="w-80 h-auto object-contain"
+          />
+        </motion.div>
       </motion.div>
 
       {/* Right Side: Form */}
@@ -119,5 +125,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 
