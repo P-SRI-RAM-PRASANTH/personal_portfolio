@@ -38,7 +38,7 @@ const Work = () => {
         <div className="flex flex-wrap gap-x-4 gap-y-4 xl:gap-y-8 justify-center xl:justify-start mb-8">
           {aboutData.map((item, itemIndex) => (
             <div
-              key={itemIndex}
+              key={itemIndex} // Key for each tab
               role="tab"
               aria-selected={index === itemIndex}
               className={`${
@@ -55,7 +55,7 @@ const Work = () => {
 
         {/* Content for Selected Category */}
         <motion.div
-          key={index}
+          key={index} // Key for each content section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -64,12 +64,12 @@ const Work = () => {
         >
           {aboutData[index]?.info.length > 0 ? (
             aboutData[index].info.map((item, itemIndex) => (
-              <div key={itemIndex} className="mb-4">
+              <div key={itemIndex} className="mb-4"> {/* Key for each info item */}
                 <div className="text-xl font-bold mb-2 ">{item.title}</div>
                 {item.data && <p className="text-gray-600 mb-4">{item.data}</p>}
                 {item.link && (
-                
                   <a
+                    key={item.link} // Key for the link
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -104,6 +104,3 @@ const Work = () => {
 };
 
 export default Work;
-
-
-

@@ -26,7 +26,7 @@ const icons = {
   html: <FaHtml5 />,
   css: <FaCss3 />,
   js: <FaJs />,
-  git: <FaGit/>,
+  git: <FaGit />,
   react: <FaReact />,
   nextjs: <SiNextdotjs />,
   framer: <SiFramer />,
@@ -34,7 +34,7 @@ const icons = {
   figma: <FaFigma />,
   tailwindcss: <SiTailwindcss />,
   photoshop: <SiAdobephotoshop />,
-  firebase: <SiFirebase/>,
+  firebase: <SiFirebase />,
 };
 
 // Data
@@ -77,7 +77,7 @@ const aboutData = [
       },
       {
         title: "Cyber Security - SkillDzire",
-        stage: "2o24",
+        stage: "2024",
       },
     ],
   },
@@ -182,4 +182,5 @@ const Skills = () => {
 };
 
 export default Skills;
+
 

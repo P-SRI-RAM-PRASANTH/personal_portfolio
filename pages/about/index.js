@@ -133,7 +133,7 @@ const About = () => {
     }}
   >
     {/* Static image */}
-    <img
+    <Image
       src="../../my1.png"
       alt="About Me"
       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"

@@ -29,6 +29,7 @@ const Contact = () => {
     <div className="h-screen bg-#000000 px-5 py-20 flex flex-col xl:flex-row justify-between">
       {/* Left Side: Heading and Image */}
       <motion.div
+        key="left-side"
         initial={{ x: -200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -40,6 +41,7 @@ const Contact = () => {
         </h2>
         {/* Image */}
         <motion.img
+          key="image"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -51,6 +53,7 @@ const Contact = () => {
 
       {/* Right Side: Form */}
       <motion.div
+        key="right-side"
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -59,7 +62,7 @@ const Contact = () => {
         <h2 className="text-2xl font-bold text-gray-500 mb-6">Contact Me</h2>
         <form ref={form} onSubmit={sendEmail} className="space-y-16s">
           {/* Name Field */}
-          <div>
+          <div key="name-field">
             <label htmlFor="name" className="block text-sm font-semibold text-gray-600">
               Name
             </label>
@@ -72,7 +75,7 @@ const Contact = () => {
             />
           </div>
           {/* Email Field */}
-          <div>
+          <div key="email-field">
             <label htmlFor="email" className="block text-sm font-semibold text-gray-600">
               Email
             </label>
@@ -85,7 +88,7 @@ const Contact = () => {
             />
           </div>
           {/* Message Field */}
-          <div>
+          <div key="message-field">
             <label htmlFor="message" className="block text-sm font-semibold text-black-600">
               Message
             </label>
@@ -98,7 +101,7 @@ const Contact = () => {
             ></textarea>
           </div>
           {/* Send Mail Button */}
-          <div>
+          <div key="submit-button">
             <button
               type="submit"
               className="w-full bg-red-500 text-white font-semibold py-2 rounded-md shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-400"
