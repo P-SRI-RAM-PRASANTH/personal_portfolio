@@ -1,92 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-} from "react-icons/si";
-
-// data
-const aboutData = [
-  {
-    title: 'skills',
-    info: [
-      {
-        title: 'Web Development',
-        icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
-        ],
-      },
-      {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
-      },
-    ],
-  },
-  {
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
-      },
-      {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
-      },
-      {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'credentials',
-    info: [
-      {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
-      },
-      {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
-      },
-      {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
-      },
-    ],
-  },
-];
-
+import Image from "next/image";
 const About = () => {
   return (
     <div className="container mx-auto h-full flex flex-col xl:flex-row items-center gap-x-6">
@@ -132,11 +46,18 @@ const About = () => {
           }}
         >
           {/* Static image using next/image */}
-          <motion.img
-            src="/my1.png"  // Make sure the image is in the public folder
-            alt="About Me"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-          />
+          <motion.div
+            className="w-full h-full"
+            style={{ position: 'relative', overflow: 'hidden', borderRadius: '10rem 0 4rem 0' }}
+          >
+            <Image
+              src="/my1.png"  // Make sure the image is in the public folder
+              alt="About Me"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              layout="fill"  // This makes the image take up the entire container
+              objectFit="cover" 
+            />
+          </motion.div>
         </div>
 
         <style jsx>{`
@@ -158,4 +79,5 @@ const About = () => {
 };
 
 export default About;
+
 
