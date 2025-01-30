@@ -37,7 +37,7 @@ const Contact = () => {
       >
         {/* Heading */}
         <h2 className="text-3xl font-bold text-red-700 mb-6 text-center py-10 xl:text-left">
-          LET'S WORK AND GROW TOGETHER
+          LETS WORK AND GROW TOGETHER
         </h2>
         {/* Image */}
         <motion.img
